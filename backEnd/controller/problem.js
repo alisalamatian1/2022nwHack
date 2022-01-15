@@ -1,18 +1,19 @@
 const Problem = require('../model/Problem');
 
-exports.list = async (req, res, next) => {
-    const user = req.user;
-
+exports.list_all = async (req, res, next) => {
     try {
-        const {username, email} = user;
+        const filter = {};
+        const all = await Problem.find(filter);
 
         res.status(200).json({
-            username: username,
-            email: email,
-        })
+            problems_list: all
+        });
 
     } catch(err) {
-        res.status(500).json({success:false, error:error.message});
+        res.status(500).json({
+            success:false, 
+            error:error.message
+        });
     }
 }
 
@@ -28,10 +29,15 @@ exports.post = async (req, res, next) => {
             title, body
         });
 
+        res.status(201).json({
+            success: true,
+            message: "Problem Posted"
+        })
+
     } catch(err) {
         res.status(500).json({
-            success:false, 
-            error:error.message
+            success: false, 
+            error: error.message
         });
     }
 }
