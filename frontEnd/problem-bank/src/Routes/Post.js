@@ -6,6 +6,9 @@ export default function Post() {
         <div>
             at the post!
             <Link to = "/">Problem Bank</Link>
+            <form>
+                <input type= "text" placeholder='Enter the problem'/>
+            </form>
         </div>
     )
 }
