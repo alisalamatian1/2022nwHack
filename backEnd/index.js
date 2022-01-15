@@ -10,9 +10,8 @@ const app = express();
 app.use(express.json());
 
 //Routing
-/*
-app.use('/api/auth', require('./routing/problem'));
-*/
+app.use('/api/', require('./routing/problem'));
+
 
 const port = process.env.PORT || 8000;
 
