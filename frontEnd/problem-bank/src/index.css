@@ -23,6 +23,29 @@ code {
 
 }
 
+.container-input {
+  background-color: aqua;
+  width: 400px;
+  padding: 10px;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+  height: 200px;
+  width: 50%;
+  
+}
+
+.post-title-input{
+  width: 30%;
+  margin-bottom: 0.5%;
+}
+.post-body-input{
+  width: 30%;
+  height: 50%;
+  overflow-wrap: break-word;
+}
+
+
 .message-blue {
     position: relative;
     margin-left: 20px;
