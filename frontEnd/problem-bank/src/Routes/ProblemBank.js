@@ -85,14 +85,16 @@ export default function ProblemBank() {
                 <a href="/">Home</a>
                 <Link to = "/Post">Post a problem</Link>
             </div>
-            <h3>Problem Bank</h3>
+            <h2>Problem Bank</h2>
             <div className="container">
-                <button onClick={changeToRecent}>
-                Recent
-                </button>
-                <button onClick={changeToPopular}>
-                Popular
-                </button>
+                <div className="sortButton">
+                    <button onClick={changeToRecent} class="sortButtonTag">
+                    Recent
+                    </button>
+                    <button onClick={changeToPopular} class="sortButtonTag">
+                    Popular
+                    </button>
+                </div>
                 {problems.map(                  
                     (problem) => {
                         return (                            

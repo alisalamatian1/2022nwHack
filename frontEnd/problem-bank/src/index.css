@@ -211,3 +211,20 @@ code {
 .formDiv {
   margin: 3rem;
 }
+
+.sortButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.sortButtonTag {
+  margin: 0.25rem;
+  padding: 0.5rem;
+}
+
+.sortButtonTag:hover{
+  background-color: rgb(241, 127, 127);
+  transition: ease-in-out 0.2s;
+}
