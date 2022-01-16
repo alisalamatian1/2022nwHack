@@ -19,6 +19,8 @@ export default function ProblemBank() {
         axios.get('/api/list/all', config).then(
             res => {
                 setProblems(res.data.problems_list);
+                console.log("-------")
+                console.log(res)
                 console.log(res.data.problems_list);
             }
         ).catch(
@@ -27,14 +29,11 @@ export default function ProblemBank() {
             }
         )
     }
-
-    fetchProblemList();
-
-    /*
+  
     useEffect(() => {
         fetchProblemList();
     }, []);
-    */
+    
 
     return (
         <div>
