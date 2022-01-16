@@ -21,12 +21,15 @@ code {
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
 
- .container {
-    width: 400px;
-    padding: 10px;
-    justify-content: center;
-    align-content: center;
-    margin: auto;
+.container {
+  /* width: 100%; */
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin: auto;
 
 }
 
@@ -39,7 +42,7 @@ code {
   margin: auto;
   height: 200px;
   width: 50%;
-  
+
 }
 
 /* .post-title-input{
@@ -66,14 +69,15 @@ code {
     border: 1px solid #97C6E3;
     border-radius: 10px;
 } */
-.message-blue{
+.message-blue {
   border-radius: 10px;
+  width: 50%;
   background-color: white;
-  margin: 1.5rem;
   padding: 0.5rem;
   border: 2px solid black;
   box-shadow: 0 0 0.5rem 0 rgb(0 0 0 / 90%);
   font-size: 1.5rem;
+  margin: 1.5rem;
 }
 
 .message-blue:hover {
@@ -81,28 +85,28 @@ code {
 }
 
 .message-content {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .message-body {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .message-timestamp-right {
-    position: absolute;
-    font-size: .85em;
-    font-weight: 300;
-    bottom: 5px;
-    right: 5px;
+  position: absolute;
+  font-size: .85em;
+  font-weight: 300;
+  bottom: 5px;
+  right: 5px;
 }
 
 .message-timestamp-left {
-    position: absolute;
-    font-size: .85em;
-    font-weight: 300;
-    bottom: 5px;
-    left: 5px;
+  position: absolute;
+  font-size: .85em;
+  font-weight: 300;
+  bottom: 5px;
+  left: 5px;
 }
 
 /* .message-blue:after {
@@ -129,48 +133,50 @@ code {
     left: -17px;
 } */
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
 .post-title-input {
   width: 50%;
   height: 100%;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 1rem;
-    box-shadow: 0.5rem 1px 0.5rem rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 1px 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .post-title-input:hover {
   transition: ease-in-out 0.1s;
-    box-shadow: 0 0 1rem 0 rgb(0 0 0 / 90%);
+  box-shadow: 0 0 1rem 0 rgb(0 0 0 / 90%);
 }
 
 .post-body-input:hover {
   transition: ease-in-out 0.1s;
-    box-shadow: 0 0 1rem 0 rgb(0 0 0 / 90%);
+  box-shadow: 0 0 1rem 0 rgb(0 0 0 / 90%);
 }
 
 .post-body-input {
   width: 50%;
   height: 15rem;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 1rem;
-    box-shadow: 0.5rem 1px 0.5rem rgba(0, 0, 0, 0.1);
-    overflow-wrap: break-word;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 1px 0.5rem rgba(0, 0, 0, 0.1);
+  overflow-wrap: break-word;
 }
 
 .submitButton {
   font-size: 1rem;
   font-style: normal;
   width: 50%;
-  
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 1rem;
-    box-shadow: 0 0 0.5rem 0 rgb(0 0 0 / 50%);
+
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem 0 rgb(0 0 0 / 50%);
 }
 
 .submitButton:hover {
@@ -179,23 +185,23 @@ code {
 }
 
 .navbar {
-    background-color: black;
-    text-decoration: none;
-    height: 3rem;
-    /* width: 100%; */
-    /* position: absolute;
+  background-color: black;
+  text-decoration: none;
+  height: 3rem;
+  /* width: 100%; */
+  /* position: absolute;
     /* top: 0; */
-    /* right: 0;
+  /* right: 0;
     left: 0; */
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    /* max-width: 80rem; */
-    /* rem is relative unit */
-    color: aliceblue;
-    padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  /* max-width: 80rem; */
+  /* rem is relative unit */
+  color: aliceblue;
+  padding: 1rem 2rem;
 }
 
 .navbar .a {

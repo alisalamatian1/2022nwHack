@@ -46,7 +46,7 @@ const Post = () => {
                 <Link to = "/">Problem Bank</Link>
             </div>
             <div className="formDiv">
-                <h3>Enter the details of the problem.</h3>
+                <h2>Enter the details of the problem.</h2>
                 {/* <form class= "container-input"> */}
                 <form>
                     <input onChange = {titleHandler} class= "post-title-input" type= "text" placeholder='Enter the title'/> <br />

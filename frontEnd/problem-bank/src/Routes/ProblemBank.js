@@ -50,23 +50,24 @@ export default function ProblemBank() {
 
     return (
         <div>
-           <div className="navbar">
+            <div className="navbar">
                 <a href="/">Home</a>
-                <Link to = "/Post">Post</Link>
+                <Link to = "/Post">Post a problem</Link>
             </div>
-            <h3>Problem Bank</h3>
+            <h2>Problem Bank</h2>
             <div class="container">
                 {problems.map(
                     (problem) => {
                         return (
                             <div className="message-blue">
                                 <p className="message-content">{problem.title}
+                                </p>
+                                <hr />
+                                <p className="message-content message-body">{problem.body}</p>
                                 <hr />
                                     <button onClick={()=>{addOneLike(problem)}}>
                                         <AiFillLike />{problem.likeCount}
                                     </button>
-                                </p>
-                                <p className="message-content">{problem.body}</p>
                             </div>
                         )
                     }
