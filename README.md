@@ -33,3 +33,10 @@ A web application made to host problems faced by users around the world. Problem
     <li> Open frontEnd/problem-bank and run `npm start`
   </ul> 
 </ul>
+
+## 📷 Screenshots
+### Post a Problem
+![Image](https://github.com/alisalamatian1/2022nwHack/blob/main/resources/Postproblem_ss.png)
+
+### Probelm Bank
+![Image](https://github.com/alisalamatian1/2022nwHack/blob/main/resources/problemBank_ss.png)
