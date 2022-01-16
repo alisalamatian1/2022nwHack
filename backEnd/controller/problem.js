@@ -1,4 +1,4 @@
-const Problem = require('../model/Problem');
+const Problem = require('../model/problem');
 const ErrorResponse = require('../util/errorResponse');
 
 exports.list_all = async (req, res, next) => {
@@ -35,6 +35,23 @@ exports.post = async (req, res, next) => {
             message: "Problem Posted"
         })
 
+    } catch(err) {
+        res.status(500).json({
+            success: false, 
+            error: error.message
+        });
+    }
+}
+
+exports.updateLike = async (req, res, next) => {
+    const { postId } = req.body;
+
+    try {
+        const post = await Problem.findOne({postId});
+
+        post.likeCount += 1;
+
+        await post.save();
     } catch(err) {
         res.status(500).json({
             success: false, 

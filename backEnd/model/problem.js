@@ -8,6 +8,10 @@ const ProblemSchema = new mongoose.Schema({
     body: {
         type: String,
         required: [true, "Please elaborate on the problem!"]
+    },
+    likeCount: {
+        type: Number,
+        default: 0
     }
 });
 
