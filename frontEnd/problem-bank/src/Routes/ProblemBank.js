@@ -10,6 +10,7 @@ import { icons } from 'react-icons/lib';
 export default function ProblemBank() {
     const [problems, setProblems] = useState([]);
     const [likeState, setLikeState] = useState(false);
+    const [option, setOption] = useState(0);
 
     const fetchProblemList = () => {
         const config = {
@@ -18,23 +19,44 @@ export default function ProblemBank() {
             }
         }
 
-        axios.get('/api/list/all', config).then(
-            res => {
-                setProblems(res.data.problems_list);
-                console.log("-------")
-                console.log(res)
-                console.log(res.data.problems_list);
-            }
-        ).catch(
-            err => {
-                alert(err.message);
-            }
-        )
+        console.log("????")
+
+        if (option === 0){
+            axios.get('/api/list/all', config).then(
+                res => {
+    
+                    setProblems(res.data.problems_list.reverse());
+                    console.log("!!!!")
+                    console.log(res)
+                    console.log(res.data.problems_list);
+                }
+            ).catch(
+                err => {
+                    alert(err.message);
+                }
+            )
+        }else if (option === 1){
+            axios.get('/api/list/all_like', config).then(
+                res => {
+    
+                    setProblems(res.data.problems_list);
+                    console.log("!!!!")
+                    console.log(res)
+                    console.log(res.data.problems_list);
+                }
+            ).catch(
+                err => {
+                    alert(err.message);
+                }
+            )
+        }
+        
     }
 
     useEffect(() => {
+        console.log("-------")
         fetchProblemList();
-    }, [likeState]);
+    }, [likeState, option]);
 
 
     const addOneLike = (problem)=>{ 
@@ -48,17 +70,42 @@ export default function ProblemBank() {
         axios.put('/api/updateLike', {postId}, config);           
     }
 
+    const changeToRecent = ()=>{
+        setOption(0);
+    }
+    const changeToPopular= ()=>{
+        setOption(1);
+    }
+
+
     return (
         <div>
+<<<<<<< HEAD
             <div className="navbar">
+=======
+            {console.log("++++")}
+           <div className="navbar">
+>>>>>>> 29460a65f46c5ee541dd74134b0cdf5da10d6583
                 <a href="/">Home</a>
                 <Link to = "/Post">Post a problem</Link>
             </div>
+<<<<<<< HEAD
             <h2>Problem Bank</h2>
             <div class="container">
                 {problems.map(
+=======
+            <h3>Problem Bank</h3>
+            <div className="container">
+                <button onClick={changeToRecent}>
+                Recent
+                </button>
+                <button onClick={changeToPopular}>
+                Popular
+                </button>
+                {problems.map(                  
+>>>>>>> 29460a65f46c5ee541dd74134b0cdf5da10d6583
                     (problem) => {
-                        return (
+                        return (                            
                             <div className="message-blue">
                                 <p className="message-content">{problem.title}
                                 </p>
