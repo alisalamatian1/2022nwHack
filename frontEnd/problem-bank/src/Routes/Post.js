@@ -1,18 +1,31 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import axios from 'axios'
 import "../index.css"
 
-const Post = ()=>{
-    const [message, setMessage] = useState(null);
+const Post = () => {
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
 
-    const submitHandler = ()=>{
-        setMessage({
-            title,
-            body,
-        })
+    const submitHandler = (e) =>{
+        e.preventDefault();
+        
+        const config = {
+            headers: {
+                "Content-Type": "application/json" 
+            }
+        }
+
+        axios.post('/api/post', {title, body}, config).then(
+            res => {
+                alert(`${res.data.message}`);
+            }
+        ).catch(
+            err => {
+                alert(err.message);
+            }
+        )
     }
 
     const titleHandler = (e)=>{
