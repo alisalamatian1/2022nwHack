@@ -38,16 +38,24 @@ const Post = () => {
     
     
     return (
+        
         <div>
-            at the post!
-            <Link to = "/">Problem Bank</Link>
-            <form class= "container-input">
-                <input onChange = {titleHandler} class= "post-title-input" type= "text" placeholder='Enter the title'/> <br />
-                <input onChange = {bodyHandler} class= "post-body-input" type= "text" placeholder='Enter the problem body'/> <br />
-                <button onClick={submitHandler}>
-                    submit
-                </button>
-            </form>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"></link>
+            <div className="navbar">
+            <a href="/">Home</a>
+                <Link to = "/">Problem Bank</Link>
+            </div>
+            <div className="formDiv">
+                <h3>Enter the details of the problem.</h3>
+                {/* <form class= "container-input"> */}
+                <form>
+                    <input onChange = {titleHandler} class= "post-title-input" type= "text" placeholder='Enter the title'/> <br />
+                    <textarea onChange = {bodyHandler} class= "post-body-input" type= "text" placeholder='Enter the problem body'/> <br />
+                    <button onClick={submitHandler} class="submitButton">
+                        Submit
+                    </button>
+                </form>
+            </div>
         </div>
     )
 }

@@ -38,17 +38,19 @@ export default function ProblemBank() {
 
     return (
         <div>
-            We are at the problem bank
-            <p>
-                <Link to="/Post">Post</Link>
-            </p>     
+           <div className="navbar">
+                <a href="/">Home</a>
+                <Link to = "/Post">Post</Link>
+            </div>
+            <h3>Problem Bank</h3>
             <div class="container">
                 {problems.map(
                     (problem) => {
                         return(
                             <div className="message-blue">
                                 <p className="message-content">{problem.title}</p>
-                                <p className="message-content">{problem.body}</p>
+                                <hr />
+                                <p className="message-content message-body">{problem.body}</p>
                             </div>
                         )
                     }
