@@ -10,6 +10,7 @@ import { icons } from 'react-icons/lib';
 export default function ProblemBank() {
     const [problems, setProblems] = useState([]);
     const [likeState, setLikeState] = useState(false);
+    const [option, setOption] = useState(0);
 
     const fetchProblemList = () => {
         const config = {
@@ -48,6 +49,14 @@ export default function ProblemBank() {
         axios.put('/api/updateLike', {postId}, config);           
     }
 
+    const changeToRecent = ()=>{
+        setOption(1);
+    }
+    const changeToPopular= ()=>{
+        setOption(0);
+    }
+
+
     return (
         <div>
            <div className="navbar">
@@ -55,7 +64,13 @@ export default function ProblemBank() {
                 <Link to = "/Post">Post</Link>
             </div>
             <h3>Problem Bank</h3>
-            <div class="container">
+            <div className="container">
+                <button onClick={changeToRecent}>
+                Recent
+                </button>
+                <button onClick={changeToPopular}>
+                Popular
+                </button>
                 {problems.map(
                     (problem) => {
                         return (
