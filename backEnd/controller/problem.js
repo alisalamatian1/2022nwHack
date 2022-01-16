@@ -2,18 +2,9 @@ const Problem = require('../model/problem');
 const ErrorResponse = require('../util/errorResponse');
 
 exports.list_all = async (req, res, next) => {
-    const { option } = req.body;
-
     try {
-        var filter, all;
-
-        if(option == 0) {
-            filter = {};
-            all = await Problem.find(filter);
-        } else if(option == 1) {
-            filter = {likeCount: -1};
-            all = await Problem.find().sort(filter);
-        }
+        const filter = {};
+        const all = await Problem.find(filter);
 
         res.status(200).json({
             problems_list: all
@@ -69,6 +60,23 @@ exports.updateLike = async (req, res, next) => {
         res.status(500).json({
             success: false, 
             error: error.message
+        });
+    }
+}
+
+exports.list_all_like = async (req, res, next) => {
+    try {
+        const filter = {likeCount: -1};
+        const all = await Problem.find().sort(filter);
+
+        res.status(200).json({
+            problems_list: all
+        });
+
+    } catch(err) {
+        res.status(500).json({
+            success:false, 
+            error:error.message
         });
     }
 }
