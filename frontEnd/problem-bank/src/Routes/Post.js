@@ -11,17 +11,26 @@ const Post = ()=>{
     const submitHandler = ()=>{
         setMessage({
             title,
-            message,
+            body,
         })
     }
+
+    const titleHandler = (e)=>{
+        setTitle(e.target.value)
+    }
+
+    const bodyHandler = (e)=>{
+        setBody(e.target.value)
+    }
+    
     
     return (
         <div>
             at the post!
             <Link to = "/">Problem Bank</Link>
             <form class= "container-input">
-                <input class= "post-title-input" type= "text" placeholder='Enter the title'/> <br />
-                <input class= "post-body-input" type= "text" placeholder='Enter the problem body'/> <br />
+                <input onChange = {titleHandler} class= "post-title-input" type= "text" placeholder='Enter the title'/> <br />
+                <input onChange = {bodyHandler} class= "post-body-input" type= "text" placeholder='Enter the problem body'/> <br />
                 <button onClick={submitHandler}>
                     submit
                 </button>
@@ -31,6 +40,3 @@ const Post = ()=>{
 }
 
 export default Post;
-
-// onChange={setTitle()}
-// onChange={setBody()}
