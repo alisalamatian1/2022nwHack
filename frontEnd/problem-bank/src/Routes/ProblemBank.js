@@ -80,20 +80,11 @@ export default function ProblemBank() {
 
     return (
         <div>
-<<<<<<< HEAD
-            <div className="navbar">
-=======
             {console.log("++++")}
            <div className="navbar">
->>>>>>> 29460a65f46c5ee541dd74134b0cdf5da10d6583
                 <a href="/">Home</a>
                 <Link to = "/Post">Post a problem</Link>
             </div>
-<<<<<<< HEAD
-            <h2>Problem Bank</h2>
-            <div class="container">
-                {problems.map(
-=======
             <h3>Problem Bank</h3>
             <div className="container">
                 <button onClick={changeToRecent}>
@@ -103,7 +94,6 @@ export default function ProblemBank() {
                 Popular
                 </button>
                 {problems.map(                  
->>>>>>> 29460a65f46c5ee541dd74134b0cdf5da10d6583
                     (problem) => {
                         return (                            
                             <div className="message-blue">
