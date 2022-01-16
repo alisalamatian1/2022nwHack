@@ -1,4 +1,4 @@
-const Problem = require('../model/Problem');
+const Problem = require('../model/problem');
 const ErrorResponse = require('../util/errorResponse');
 
 exports.list_all = async (req, res, next) => {

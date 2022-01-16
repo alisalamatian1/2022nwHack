@@ -1,6 +1,6 @@
 {
   "name": "problem-bank",
-  "proxy": "http://localhost:8000",
+  "proxy": "https://problem-bank-backend.herokuapp.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
