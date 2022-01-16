@@ -19,23 +19,44 @@ export default function ProblemBank() {
             }
         }
 
-        axios.get('/api/list/all', config).then(
-            res => {
-                setProblems(res.data.problems_list);
-                console.log("-------")
-                console.log(res)
-                console.log(res.data.problems_list);
-            }
-        ).catch(
-            err => {
-                alert(err.message);
-            }
-        )
+        console.log("????")
+
+        if (option === 0){
+            axios.get('/api/list/all', config).then(
+                res => {
+    
+                    setProblems(res.data.problems_list.reverse());
+                    console.log("!!!!")
+                    console.log(res)
+                    console.log(res.data.problems_list);
+                }
+            ).catch(
+                err => {
+                    alert(err.message);
+                }
+            )
+        }else if (option === 1){
+            axios.get('/api/list/all_like', config).then(
+                res => {
+    
+                    setProblems(res.data.problems_list);
+                    console.log("!!!!")
+                    console.log(res)
+                    console.log(res.data.problems_list);
+                }
+            ).catch(
+                err => {
+                    alert(err.message);
+                }
+            )
+        }
+        
     }
 
     useEffect(() => {
+        console.log("-------")
         fetchProblemList();
-    }, [likeState]);
+    }, [likeState, option]);
 
 
     const addOneLike = (problem)=>{ 
@@ -50,15 +71,16 @@ export default function ProblemBank() {
     }
 
     const changeToRecent = ()=>{
-        setOption(1);
+        setOption(0);
     }
     const changeToPopular= ()=>{
-        setOption(0);
+        setOption(1);
     }
 
 
     return (
         <div>
+            {console.log("++++")}
            <div className="navbar">
                 <a href="/">Home</a>
                 <Link to = "/Post">Post</Link>
@@ -71,9 +93,9 @@ export default function ProblemBank() {
                 <button onClick={changeToPopular}>
                 Popular
                 </button>
-                {problems.map(
+                {problems.map(                  
                     (problem) => {
-                        return (
+                        return (                            
                             <div className="message-blue">
                                 <p className="message-content">{problem.title}
                                 <hr />
