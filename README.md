@@ -1,6 +1,6 @@
 # 📖 ProblemBank
 NWHacks 2022 entry. <br />
-Team members: Ali Salamatian | Gordon Cheung | Mayank Rastogi
+Team members: Ali Salamatian | Gordon Cheung | Mayank Rastogi <br />
 Demo: https://problem-bank-frontend.herokuapp.com/
 
 ## ❓ Purpose
